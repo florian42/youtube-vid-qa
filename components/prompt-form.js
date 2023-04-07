@@ -3,9 +3,9 @@ import { useState } from "react";
 import Message from "./message";
 
 export default function PromptForm({
-  isFirstPrompt,
   onSubmit,
   disabled = false,
+  isFirstPrompt,
 }) {
   const [prompt, setPrompt] = useState("");
   const [url, setUrl] = useState("");
@@ -22,13 +22,13 @@ export default function PromptForm({
 
   return (
     <form onSubmit={handleSubmit} className="animate-in fade-in duration-700">
-      <Message sender="openai" isSameSender>
-        <label htmlFor="prompt-input">
-          {isFirstPrompt
-            ? "Please Paste the URL to the YouTube video into the first input"
-            : "What do you want to ask the video now?"}
-        </label>
-      </Message>
+      {!isFirstPrompt && (
+        <Message sender="openai" isSameSender>
+          <label htmlFor="prompt-input">
+            What do you want to ask the video now?
+          </label>
+        </Message>
+      )}
 
       <div className="flex mt-8">
         <PromptInput

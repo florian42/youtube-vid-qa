@@ -12,9 +12,15 @@ export const appMetaDescription =
   "Ask ChatGPT questions about a specific YouTube Video.";
 
 export default function Home() {
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState([
+    {
+      answer: "Please Paste the URL to the YouTube video into the first input",
+    },
+  ]);
   const [error, setError] = useState(null);
   const [isProcessing, setIsProcessing] = useState(false);
+
+  console.log({ events });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,7 +39,7 @@ export default function Home() {
       url,
     };
 
-    const response = await fetch(process.env.NEXT_PUBLIC_API_URL, {
+    const response = await fetch("/api/ask", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -84,7 +90,7 @@ export default function Home() {
         />
 
         <PromptForm
-          isFirstPrompt={events.length === 1}
+          isFirstPrompt={events.length < 2}
           onSubmit={handleSubmit}
           disabled={isProcessing}
         />

@@ -36,7 +36,7 @@ export default function Footer({ events, startOver }) {
           🤔 Are you a developer and want to learn how to build this? Check out
           the{" "}
           <Link href="https://github.com/florian42/youtube-vid-qa#readme">
-            <a target="_blank">README</a>
+            <a target="_blank">GitHub repository</a>
           </Link>
           .
         </div>
@@ -48,12 +48,12 @@ export default function Footer({ events, startOver }) {
           <a target="_blank">ChatGPT</a>
         </Link>
         ,{" "}
-        <Link href="https://python.langchain.com/en/latest/index.html">
+        <Link href="https://js.langchain.com/docs/">
           <a target="_blank">LangChain</a>
         </Link>
         ,{" "}
-        <Link href="https://replit.com">
-          <a target="_blank">Replit</a>
+        <Link href="https://github.com/Kakulukian/youtube-transcript">
+          <a target="_blank">YouTube transcripts</a>
         </Link>
         ,{" "}
         <Link href="https://vercel.com/templates/ai">

@@ -16,13 +16,12 @@ export default function About() {
 
         <p className="prose">
           This open-source website provides a simple interface for asking
-          ChatGPT questions about the spoken contents of a video.
+          ChatGPT questions about the spoken contents of a video. It downloads
+          the transscript of the video and uses it as the prompt for ChatGPT.
         </p>
 
         <p className="prose">
-          The backend is hosted on <Link href="https://replit.com">Replit</Link>
-          , which exposes a REST API for running predictions. This website is
-          built with Next.js and hosted on
+          Built with Next.js and hosted on{" "}
           <Link href="https://vercel.com/templates/ai">Vercel</Link>
         </p>
 
